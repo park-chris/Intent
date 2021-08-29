@@ -1,7 +1,7 @@
 import com.neppplus.intent_20210829.MainActivity
 import kotlinx.android.synthetic.main.activity_other.*
 
-,package com.neppplus.intent_20210829
+package com.neppplus.intent_20210829
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -18,6 +18,8 @@ class OtherActivity : AppCompatActivity() {
 //            Intent를 이용, 메인으로 이동
             val myIntent = Intent(this, MainActivity::class.java)
             startActivity(myIntent)
+//            현재화면 종료
+            finish()
         }
 
     }
