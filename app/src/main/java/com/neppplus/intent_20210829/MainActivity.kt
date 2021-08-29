@@ -6,9 +6,28 @@ import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    val REQUEST_CODE_FOR_NICKNAME = 1004
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        editNicknameBtn.setOnClickListener {
+//            닉네임 변경 화면으로 이동
+//            단순 이동 X, 새 닉네임을 받아오기 위한 왕복 이동
+
+//            Intent 변수 만드는 과정 동일
+            val myIntent = Intent(this, EditNicknameActivity2::class.java)
+
+//             데이터(닉네임)을 받아오기 위한 왕복 이동 명시
+            startActivityForResult(myIntent, REQUEST_CODE_FOR_NICKNAME)
+
+        }
+
+
+
 
         sendMessageBtn.setOnClickListener {
 //            메세지 보내기가 눌리면 ?
@@ -37,6 +56,10 @@ class MainActivity : AppCompatActivity() {
 //            실제로 이동시키자
             startActivity(myIntent)
         }
+
+
+
+
 
     }
 }
