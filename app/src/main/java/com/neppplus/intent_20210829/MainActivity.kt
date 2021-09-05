@@ -84,12 +84,31 @@ class MainActivity : AppCompatActivity() {
             val inputPhoneNum = phoneNumEdt.text.toString()
             val myUri = Uri.parse("tel:${inputPhoneNum}")
             val myIntent = Intent( Intent.ACTION_CALL, myUri)
+
+//            미리 보내줄 내용 적어두기
+            myIntent.putExtra("sms_body", "이미 적혀있는 내용")
+
             startActivity(myIntent)
         }
 
+        smsBtn.setOnClickListener {
+            val inputPhoneNum = phoneNumEdt.text.toString()
+            val myUri = Uri.parse("smsto:${inputPhoneNum}")
+            val myIntent = Intent( Intent.ACTION_SENDTO, myUri)
+            startActivity(myIntent)
+        }
 
+        naverLinkBtn.setOnClickListener {
+            val myUri = Uri.parse("https://google.com")
+            val myIntent = Intent( Intent.ACTION_VIEW, myUri)
+            startActivity(myIntent)
+        }
 
-
+        kakaoStoreLinkBtn.setOnClickListener {
+            val myUri = Uri.parse("market://details?id=com.kakao.talk")
+            val myIntent = Intent( Intent.ACTION_VIEW, myUri)
+            startActivity(myIntent)
+        }
 
     }
     
