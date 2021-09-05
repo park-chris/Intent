@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:gravity="center"
     android:padding="20dp"
     android:orientation="vertical">
 
@@ -66,5 +65,20 @@
 
     </LinearLayout>
 
+
+<!-- 안드로이드가 주는 화면들 화면 - Intent(4)  -->
+
+    <EditText
+        android:id="@+id/phoneNumEdt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="연결할 전화번호 입력"
+        android:inputType="phone"/>
+
+    <Button
+        android:id="@+id/dialBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="전화 걸기 (DIAL)" />
 
 </LinearLayout>
