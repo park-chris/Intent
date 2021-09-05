@@ -75,6 +75,19 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        callBtn.setOnClickListener {
+
+//            문법상 틀린게 없어도 앱이 죽는다.
+//            권한 획득 해야 정상 동작.
+
+
+            val inputPhoneNum = phoneNumEdt.text.toString()
+            val myUri = Uri.parse("tel:${inputPhoneNum}")
+            val myIntent = Intent( Intent.ACTION_CALL, myUri)
+            startActivity(myIntent)
+        }
+
+
 
 
 
